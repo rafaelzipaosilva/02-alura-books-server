@@ -1,20 +1,15 @@
-const express = require('express');
-const rotaLivro = require('./rotas/livro');
-<<<<<<< HEAD
-const rotaFavorito = require('./rotas/favorito');
+const express = require("express")
+const rotaLivro = require("./rotas/livro")
+const cors = require("cors")
 
-const cors = require('cors');
-=======
->>>>>>> parent of bd8b74c (aula2)
+const app = express()
+app.use(express.json())
+app.use(cors({origin: "*"}))
 
-const app = express();
-app.use(express.json());
+app.use('/livros', rotaLivro)
 
-const port = 8000;
-
-app.use('/livros', rotaLivro);
-app.use('/favoritos', rotaFavorito);
+const port = 8000
 
 app.listen(port, () => {
-    console.log(`Escutando a porta ${port}`);
+    console.log(`Escutando a porta ${port}`)
 })

@@ -1,0 +1,1 @@
+npm install cors //install o cors para evitar erros na requisição http
